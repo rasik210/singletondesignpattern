@@ -9,7 +9,7 @@ namespace DataAccessLayerWithPlainTextLogger
     {
         public DataTable GetStudentData()
         {
-            var empInfo = new DataTable();
+            var studentInfo = new DataTable();
             //logger class instantiation with new keyword
             var logger = new Logger();
             try
@@ -19,12 +19,12 @@ namespace DataAccessLayerWithPlainTextLogger
                 sqlConnection.Open();
                 logger.Log("Connection established with database.", LogLevel.Trace);
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Employee", sqlConnection);
-                sqlDataAdapter.Fill(empInfo);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Student", sqlConnection);
+                sqlDataAdapter.Fill(studentInfo);
                 // noob programming! someone initialized one more instance of Logger class again in the same method.
                 var logger2 = new Logger(); 
                 logger2.Log("Data obtained from database.", LogLevel.Trace);
-                logger2.Log("Number of students fetched." + empInfo.Rows.Count, LogLevel.Information);
+                logger2.Log("Number of students fetched." + studentInfo.Rows.Count, LogLevel.Information);
             }
             catch (Exception ex)
             {
@@ -33,7 +33,7 @@ namespace DataAccessLayerWithPlainTextLogger
                 logger3.Log("An error occured in GetStudentData method. Exception details are - " + ex.Message, LogLevel.Error);
             }
             logger.Log("Method GetStudentData Exited.", LogLevel.Trace);
-            return empInfo;
+            return studentInfo;
         }
 
         private SqlConnection GetDbConnection()

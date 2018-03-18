@@ -17,7 +17,7 @@ namespace DataAccessLayer
     {
         public DataTable GetStudentData()
         {
-            var empInfo = new DataTable();
+            var studentInfo = new DataTable();
             //logger class instantiation with GetInstance
             var logger = Logger.GetInstance();
 
@@ -28,13 +28,13 @@ namespace DataAccessLayer
                 sqlConnection.Open();
                 logger.Log("Connection established with database.", LogLevel.Trace);
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Employee", sqlConnection);
-                sqlDataAdapter.Fill(empInfo);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Student", sqlConnection);
+                sqlDataAdapter.Fill(studentInfo);
                 //no worries any more. It is the same instance.
                 //logger2 is just a reference to the same singleton object
                 var logger2 = Logger.GetInstance(); 
                 logger2.Log("Data obtained from database.", LogLevel.Trace);
-                logger2.Log("Number of students fetched." + empInfo.Rows.Count, LogLevel.Information);
+                logger2.Log("Number of students fetched." + studentInfo.Rows.Count, LogLevel.Information);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace DataAccessLayer
                 logger3.Log("An error occured in GetStudentData method. Exception details are - " + ex.Message, LogLevel.Error);
             }
             logger.Log("Method GetStudentData Exited.", LogLevel.Trace);
-            return empInfo;
+            return studentInfo;
         }
 
         private SqlConnection GetDbConnection()

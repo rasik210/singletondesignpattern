@@ -9,7 +9,7 @@ namespace DataAccessLayerWithStaticTextLogger
     {
         public DataTable GetStudentData()
         {
-            var empInfo = new DataTable();
+            var studentInfo = new DataTable();
             //explicit instantiation not required anymore
             //var logger = new Logger();
 
@@ -21,19 +21,19 @@ namespace DataAccessLayerWithStaticTextLogger
                 sqlConnection.Open();
                 Logger.Log("Connection established with database.", LogLevel.Trace);
 
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Employee", sqlConnection);
-                sqlDataAdapter.Fill(empInfo);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM Student", sqlConnection);
+                sqlDataAdapter.Fill(studentInfo);
                 //Compiler stop you from doing bad programming any more
                 //var logger2 = Logger.GetInstance(); 
                 Logger.Log("Data obtained from database.", LogLevel.Trace);
-                Logger.Log("Number of students fetched." + empInfo.Rows.Count, LogLevel.Information);
+                Logger.Log("Number of students fetched." + studentInfo.Rows.Count, LogLevel.Information);
             }
             catch (Exception ex)
             {
                 Logger.Log("An error occured in GetStudentData method. Exception details are - " + ex.Message, LogLevel.Error);
             }
             Logger.Log("Method GetStudentData Exited.", LogLevel.Trace);
-            return empInfo;
+            return studentInfo;
         }
 
         private SqlConnection GetDbConnection()
