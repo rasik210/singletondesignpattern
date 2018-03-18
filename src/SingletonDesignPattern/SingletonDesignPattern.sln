@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInfo", "..\StudentInfo\StudentInfo.csproj", "{8BB854D3-82F4-48C8-AC5B-05756C08CC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "..\DataAccessLayer\DataAccessLayer.csproj", "{88C530F9-FB4E-4B41-9849-EDB0D42FFD2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextLogger", "TextLogger\TextLogger.csproj", "{A649FF38-4D2F-4758-AF8B-A67D806C45AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BB854D3-82F4-48C8-AC5B-05756C08CC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB854D3-82F4-48C8-AC5B-05756C08CC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB854D3-82F4-48C8-AC5B-05756C08CC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB854D3-82F4-48C8-AC5B-05756C08CC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C530F9-FB4E-4B41-9849-EDB0D42FFD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C530F9-FB4E-4B41-9849-EDB0D42FFD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C530F9-FB4E-4B41-9849-EDB0D42FFD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C530F9-FB4E-4B41-9849-EDB0D42FFD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A649FF38-4D2F-4758-AF8B-A67D806C45AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A649FF38-4D2F-4758-AF8B-A67D806C45AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A649FF38-4D2F-4758-AF8B-A67D806C45AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A649FF38-4D2F-4758-AF8B-A67D806C45AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

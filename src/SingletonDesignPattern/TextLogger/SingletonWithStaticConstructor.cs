@@ -1,0 +1,55 @@
+﻿using System.IO;
+using System;
+
+namespace SingletonWithStaticConstructor
+{
+    public sealed class Logger
+    {
+        //CLR guarantees that this line of code runs in a thread-safe manner
+        private static readonly Logger singleton = new Logger();
+        private string LogFileDirectory = "";
+
+        // Explicit static constructor
+        static Logger()
+        {
+
+        }
+
+        //private constructor. Now nobody dares to create my instance.
+        private Logger()
+        {
+            //in general this path will obtained at run time from the application configuration file.
+            //it will not be a hardcoded path
+            LogFileDirectory = @"C:\ProgramData\StudentInfo\";
+        }
+
+        public static Logger GetInstance()
+        {
+            //simply return the already initialized instance
+            return singleton;
+        }
+
+        public void Log(string logMessage, LogLevel logLevel)
+        {
+            if (Directory.Exists(LogFileDirectory))
+            {
+                using (StreamWriter writetext = new StreamWriter(LogFileDirectory + "log.txt",true))
+                {
+                    writetext.WriteLine(DateTime.Now.ToString() + " - " + logMessage);
+                }
+            }
+        }
+
+    }
+
+    public enum LogLevel
+    {
+        Trace,
+        Information,
+        Warning,
+        Error,
+        Critical,
+        Fatal
+    }
+}
+
