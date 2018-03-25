@@ -17,7 +17,7 @@ namespace StaticClassTextLogger
                 //the end of using block
                 //using (streamWriter = new StreamWriter(logFileDirectory + "log.txt"))
                 //{
-                //    streamWriter.WriteLine("writing in text file");
+                //    streamWriter.WriteLine(DateTime.Now.ToString() + " [" + logLevel.ToString() + "]" + " - " + logMessage);
                 //}
 
                 streamWriter = new StreamWriter(logFileDirectory + "log.txt");
