@@ -28,7 +28,7 @@ namespace StaticClassTextLogger
         public static void Log(string logMessage, LogLevel logLevel)
         {
             //use the same instance everytime Log method is called.
-            streamWriter.WriteLine(DateTime.Now.ToString() + " - " + logMessage);
+            streamWriter.WriteLine(DateTime.Now.ToString() + " [" + logLevel.ToString() + "]" + " - " + logMessage);
         }
 
     }

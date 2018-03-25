@@ -20,7 +20,7 @@ namespace TextLogger
             {
                 using (StreamWriter streamWriter = new StreamWriter(LogFileDirectory + "log.txt",true))
                 {
-                    streamWriter.WriteLine(DateTime.Now.ToString() + " - " + logMessage);
+                    streamWriter.WriteLine(DateTime.Now.ToString() + " [" + logLevel.ToString() + "]" + " - " + logMessage);
                 }
             }
         }

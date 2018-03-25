@@ -32,9 +32,9 @@ namespace SingletonTextLogger
         {
             if (Directory.Exists(LogFileDirectory))
             {
-                using (StreamWriter writetext = new StreamWriter(LogFileDirectory + "log.txt",true))
+                using (StreamWriter streamWriter = new StreamWriter(LogFileDirectory + "log.txt",true))
                 {
-                    writetext.WriteLine(DateTime.Now.ToString() + " - " + logMessage);
+                    streamWriter.WriteLine(DateTime.Now.ToString() + " [" + logLevel.ToString() + "]" + " - " + logMessage);
                 }
             }
         }

@@ -24,7 +24,7 @@ namespace DataAccessLayerWithPlainTextLogger
                 // noob programming! someone initialized one more instance of Logger class again in the same method.
                 var logger2 = new Logger(); 
                 logger2.Log("Data obtained from database.", LogLevel.Trace);
-                logger2.Log("Number of students fetched." + studentInfo.Rows.Count, LogLevel.Information);
+                logger2.Log("Count of students fetched : " + studentInfo.Rows.Count, LogLevel.Information);
             }
             catch (Exception ex)
             {
