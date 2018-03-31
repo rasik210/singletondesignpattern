@@ -1,11 +1,10 @@
 # Singleton Design Pattern
 
-This source code is part of a series of blogs published as per below mentioned details:
-
-- [Part I](https://www.codeproject.com/Articles/1190391/Singleton-Design-Pattern-The-Pragmatic-Approach-Pa)
-- [Part II](https://www.codeproject.com/Articles/1233652/Singleton-Design-Pattern-The-Pragmatic-Approach)
-
 Note for readers:
+
+This source code describes a real world use case of a logging framework. How Singleton Design Pattern is a perfect fit when you try to design a component which will be used commonly across all the layers of your solution for logging information into a persistent storage medium.
+
+How to use the source code:
 
 You would require the below mentioned software on your machine as prerequisites to compile and run the source code (written in C# language) on your computer:
 
